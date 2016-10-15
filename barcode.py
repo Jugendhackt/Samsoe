@@ -14,6 +14,8 @@ args = parser.parse_args()
 cmd = "raspistill -o {}".format(args.image)
 subprocess.call(cmd, shell=True)
 
+subprocess.check_output("curl --data \"qrdata={}\"URL".format(qr.data), shell=True)
+
 qr = qrtools.QR()
 qr.decode(args.image)
 print (qr.data)
