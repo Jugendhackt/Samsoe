@@ -7,8 +7,10 @@ import argparse
 
 parser = argparse.ArgumentParser(description='decode barcode')
 parser.add_argument('image')
+parser.add_argument('--ip',default = "100.100.218.137/rpi.jsp")
 
 args = parser.parse_args()
+
 
 
 cmd = "raspistill -o {}".format(args.image)
@@ -21,6 +23,6 @@ qr = qrtools.QR()
 qr.decode(args.image)
 print (qr.data)
 
-co2 = subprocess.check_output("curl --data \"qrdata={}\"URL".format(qr.data), shell=True)
+co2 = subprocess.check_output("curl --data \"qrdata={}\"{}".format(qr.data,args.ip), shell=True)
 
 print(co2)
