@@ -12,7 +12,7 @@ args = parser.parse_args()
 
 
 cmd = "raspistill -o {}".format(args.image)
-subprocess.call(cmd)
+subprocess.call(cmd, shell=True)
 
 qr = qrtools.QR()
 qr.decode(args.image)
