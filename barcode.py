@@ -29,4 +29,4 @@ while ean == "NULL":
 
 co2 = subprocess.check_output('curl --silent --data "qrdata={}" {}'.format(ean,args.ip), shell=True)
 
-print("CO2 emission: {}".format(co2.strip()))
+print("CO2 emission: {}g".format(co2.strip()))
