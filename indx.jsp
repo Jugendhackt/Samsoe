@@ -10,20 +10,29 @@
 
     <meta name="viewport" content="width=device-width; initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+
+      <!-- Das neueste kompilierte und minimierte CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+      <!-- Optionales Theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+      <!-- Das neueste kompilierte und minimierte JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </head>
 
   <body>
       <header>
           <div class="headline">
-              <h1>Samsö</h1>
+              <h1>Samsï¿½</h1>
               <h2>Zeig Deinen CO2 Verbrauch  (Barcode scaner)</h2>
           </div>
       </header>
       <div>
     <section id="container" class="container">
         <h3>Barcode Scannen</h3>
-        <p>Mit hilfe dieses tools kannst du ein produckt einscennen und beckommst den einen wert zurück der dir sagt wie schädlich 
-        dieses produckt für die umwelt ist 
+        <p>Mit hilfe dieses tools kannst du ein produckt einscennen und beckommst den einen wert zurï¿½ck der dir sagt wie schï¿½dlich 
+        dieses produckt fï¿½r die umwelt ist 
             </p>
             
         <div class="controls">
@@ -49,7 +58,7 @@
     </section>
           <footer>
         <p>
-         Sanmsö by : Sebastian Andre und soe
+         Sanmsï¿½ by : Sebastian Andre und soe
         </p>
       </footer>
  </div>
