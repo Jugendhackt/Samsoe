@@ -19,75 +19,28 @@
               <h2>Zeig Deinen CO2 Verbrauch  (Barcode scaner)</h2>
           </div>
       </header>
+      <div>
     <section id="container" class="container">
         <h3>Barcode Scannen</h3>
         <p>Mit hilfe dieses tools kannst du ein produckt einscennen und beckommst den einen wert zurück der dir sagt wie schädlich 
         dieses produckt für die umwelt ist 
             </p>
+            
         <div class="controls">
             <fieldset class="input-group">
-                <button class="stop">Stop</button>
+                <button id="btn" class="stop">Absenden</button> 
+                <br>
+               <form action="http://100.100.218.137:8080/samsoe/indx.jsp">
+    			<input id="btn" type="submit" value="Neuer Versuch">
+			   </form> 
             </fieldset>
-            <div id ="co2wert"> Test 
-            </div>
-            <!-- Ist für die individuelle einstellung nötig soll hier aber nicht verwenbdet werden !!! 
-            <fieldset class="reader-config-group">
-                <label>
-                    <span>Barcode-Type</span>
-                    <select name="decoder_readers">
-                        <option value="code_128" selected="selected">Code 128</option>
-                        <option value="code_39">Code 39</option>
-                        <option value="code_39_vin">Code 39 VIN</option>
-                        <option value="ean">EAN</option>
-                        <option value="ean_extended">EAN-extended</option>
-                        <option value="ean_8">EAN-8</option>
-                        <option value="upc">UPC</option>
-                        <option value="upc_e">UPC-E</option>
-                        <option value="codabar">Codabar</option>
-                        <option value="i2of5">ITF</option>
-                    </select>
-                </label>
-                <label>
-                    <span>Resolution (long side)</span>
-                    <select name="input-stream_constraints">
-                        <option value="320x240">320px</option>
-                        <option selected="selected" value="640x480">640px</option>
-                        <option value="800x600">800px</option>
-                        <option value="1280x720">1280px</option>
-                        <option value="1600x960">1600px</option>
-                        <option value="1920x1080">1920px</option>
-                    </select>
-                </label>
-                <label>
-                    <span>Patch-Size</span>
-                    <select name="locator_patch-size">
-                        <option value="x-small">x-small</option>
-                        <option value="small">small</option>
-                        <option selected="selected" value="medium">medium</option>
-                        <option value="large">large</option>
-                        <option value="x-large">x-large</option>
-                    </select>
-                </label>
-                <label>
-                    <span>Half-Sample</span>
-                    <input type="checkbox" checked="checked" name="locator_half-sample" />
-                </label>
-                <label>
-                    <span>Workers</span>
-                    <select name="numOfWorkers">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option selected="selected" value="4">4</option>
-                        
-                        <option value="8">8</option>
-                    </select>
-                </label>
-            </fieldset>
-            -->
+            <br>
+            <span style="font-size:50px" id ="co2wert" class="shadow">  </span>
+           <!--  -->
+            
             
         </div>
-      <div id="result_strip">
+      <div id="result_strip"> 
         <ul class="thumbnails"></ul>
         <ul class="collector"></ul>
       </div>
@@ -99,7 +52,7 @@
          Sanmsö by : Sebastian Andre und soe
         </p>
       </footer>
-
+ </div>
     <script src="vendor/jquery-1.9.0.min.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="quagga.js" type="text/javascript"></script>
