@@ -11,19 +11,21 @@ parser.add_argument('--ip',default = "100.100.218.137:8080/samsoe/RPI.jsp")
 
 args = parser.parse_args()
 
+ean = "Null"
+
+while ean == "NULL":
+
+    cmd = "raspistill -o {}".format(args.image)
+    subprocess.call(cmd, shell=True)
 
 
-cmd = "raspistill -o {}".format(args.image)
-subprocess.call(cmd, shell=True)
 
 
+    qr = qrtools.QR()
+    qr.decode(args.image)
+    print (qr.data)
 
+    ean = qr.data
 
-qr = qrtools.QR()
-qr.decode(args.image)
-print (qr.data)
-if qr.data!= "NULL":
-    co2 = subprocess.check_output('curl --data "qrdata={}" {}'.format(qr.data,args.ip), shell=True)
-    print(co2)
-else:
-    print("Barcode nicht erkannt")
+co2 = subprocess.check_output('curl --data "qrdata={}" {}'.format(ean,args.ip), shell=True)
+print(co2)
