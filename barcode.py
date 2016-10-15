@@ -12,7 +12,7 @@ parser.add_argument('--ip',default = "100.100.218.137:8080/samsoe/RPI.jsp")
 args = parser.parse_args()
 
 class Application(Frame):
-    def say_hi(self):
+    def scannen(self):
         ean = "NULL"
 
         while ean == "NULL":
@@ -29,21 +29,26 @@ class Application(Frame):
         co2 = subprocess.check_output('curl --silent --data "qrdata={}" {}'.format(ean,args.ip), shell=True)
 
         print("CO2 emission: {}g".format(co2.strip()))
-
+        self.CO2["text"] = "CO2 emission:\n {}g".format(co2.strip())
 
     def createWidgets(self):
         self.QUIT = Button(self)
         self.QUIT["text"] = "QUIT"
         self.QUIT["fg"]   = "red"
         self.QUIT["command"] =  self.quit
+        self.QUIT["font"] = "helvetica 24"
 
-        self.QUIT.pack({"side": "left"})
+        self.QUIT.pack({"side": "right"})
 
-        self.hi_there = Button(self)
-        self.hi_there["text"] = "Hello",
-        self.hi_there["command"] = self.say_hi
+        self.scann = Button(self)
+        self.scann["text"] = "Scannen",
+        self.scann["command"] = self.scannen
+        self.scann["font"] = "helvetica 24"
 
-        self.hi_there.pack({"side": "left"})
+        self.scann.pack({"side": "left"})
+
+        self.CO2 = Label(self,text ="CO2:\ng",font = "helvetica 36")
+        self.CO2.pack(side = "left")
 
     def __init__(self, master=None):
         Frame.__init__(self, master)
