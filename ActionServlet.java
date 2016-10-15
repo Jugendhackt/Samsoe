@@ -35,7 +35,8 @@ public class ActionServlet extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
   String name=null;
  //  name = "Hello "+request.getParameter("EAN");
-  
+  int CO2;
+  try{
    String ean = request.getParameter("EAN");
    String ProductJson = getProduct(ean);
 
@@ -43,14 +44,17 @@ public class ActionServlet extends HttpServlet {
    System.out.println(objJSON);
    String categoriesStr = objJSON.getJSONObject("product").getString("categories");
    String[] categories= categoriesStr.split(",");
-   int CO2 = getCO2(categories);
+   CO2 = getCO2(categories);
    System.out.println(CO2);
-  
+  }catch(Exception e)
+  {
+	  CO2 = -1;
+  }
   
   
   response.setContentType("text/plain");  
   response.setCharacterEncoding("UTF-8"); 
-  response.getWriter().write(name); 
+  response.getWriter().write(Integer.toString(CO2)); 
  }
  
    
