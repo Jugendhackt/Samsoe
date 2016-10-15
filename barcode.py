@@ -11,7 +11,7 @@ parser.add_argument('--ip',default = "100.100.218.137:8080/samsoe/RPI.jsp")
 
 args = parser.parse_args()
 
-ean = "Null"
+ean = "NULL"
 
 while ean == "NULL":
 
