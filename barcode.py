@@ -14,6 +14,7 @@ args = parser.parse_args()
 class Application(Frame):
     def scannen(self):
         ean = "NULL"
+        self.CO2["text"] = "scanne"
 
         while ean == "NULL":
 
