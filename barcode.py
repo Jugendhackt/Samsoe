@@ -32,7 +32,7 @@ class Application(Frame):
         self.CO2["text"] = "CO2 emission:\n {}g".format(co2.strip())
 
     def createWidgets(self):
-        self.QUIT = Button(self)
+        self.QUIT = Button(self,height = 10, width =10)
         self.QUIT["text"] = "QUIT"
         self.QUIT["fg"]   = "red"
         self.QUIT["command"] =  self.quit
@@ -40,14 +40,14 @@ class Application(Frame):
 
         self.QUIT.pack({"side": "right"})
 
-        self.scann = Button(self)
+        self.scann = Button(self,height = 10, width = 10)
         self.scann["text"] = "Scannen",
         self.scann["command"] = self.scannen
         self.scann["font"] = "helvetica 24"
 
         self.scann.pack({"side": "left"})
 
-        self.CO2 = Label(self,text ="CO2:\ng",font = "helvetica 36")
+        self.CO2 = Label(self,text ="CO2:\ng",font = "helvetica 36",height = 10, width = 15)
         self.CO2.pack(side = "left")
 
     def __init__(self, master=None):
