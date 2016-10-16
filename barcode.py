@@ -15,6 +15,7 @@ class Application(Frame):
     def scannen(self):
         ean = "NULL"
         self.CO2["text"] = "scanne"
+        root.update()
 
         while ean == "NULL":
 
@@ -26,6 +27,9 @@ class Application(Frame):
             print (qr.data)
 
             ean = qr.data
+            
+        self.CO2["text"] = "abfrage"
+        root.update()
 
         co2 = subprocess.check_output('curl --silent --data "qrdata={}" {}'.format(ean,args.ip), shell=True)
 
